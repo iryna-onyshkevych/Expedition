@@ -1,0 +1,30 @@
+﻿@using Excursion.Models
+@model IEnumerable<Review>
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+<div class="wrap">
+
+
+    <span id="contents"></span>
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <a id="map-s" asp-action="Index" asp-controller="Map"><button id="btn-id-foot">ЗАПИСАТИСЯ НА СПЛАВ</button></a>
+    }
+        @*<a id="map-s" asp-action="Create" asp-controller="Review"><button id="btn-id-foot">Додати відгук</button></a>*@
+
+    <a asp-action="Create" asp-controller="Review" class="btn btn-outline-info">Залишити відгук</a>
+
+
+    <div class="people-rev">
+        @foreach (Review p in Model)
+        {
+
+            <h3 id="name-people">@p.ParticipantName<span id="time">@p.ReviewTime</span> </h3>
+            <p id="rev-people">@p.ParticipantReview</p>
+        }
+
+    </div>
+
+</div>

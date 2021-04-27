@@ -1,0 +1,40 @@
+﻿.form-group {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    background: darkred;
+    color: white;
+    border: none;
+    height: 35px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: .4s;
+}
+
+    .btn:hover {
+        background: red;
+        transition: .4s;
+    }
+
+.close {
+    border: none;
+    padding: 5px;
+    background-color: gray;
+    font-size: 20px;
+    color: tomato;
+    cursor: pointer;
+}
+
+    .close:hover {
+        color: red;
+    }
+
+.modal-content {
+    justify-content: center;
+    display: grid;
+    text-align: center;
+}

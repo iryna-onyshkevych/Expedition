@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "_Layout";
+}
+@model Excursion.Models.LoginModel
+
+<div class="wrap">
+    <h2 id="title-login">Вхід на сайт</h2>
+    <form method="post" asp-controller="Account" asp-action="Login"
+          asp-route-returnUrl="@Model.ReturnUrl">
+        <div class="div-create">
+            <div class="form-group">
+                <label asp-for="Email">Введіть Логін: </label>
+                <input type="text" asp-for="Email" placeholder="LOGIN" />
+                <span asp-validation-for="Email" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Password">Введіть Пароль: </label>
+                <input asp-for="Password" placeholder="PASSWORD" />
+                <span asp-validation-for="Password" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Увійти" class="btn" />
+            </div>
+            </div>
+    </form>
+   
+        <a asp-controller="Account" asp-action="ForgotPassword">Забув(-ла) пароль</a>
+    </div>

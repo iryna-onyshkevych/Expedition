@@ -1,0 +1,44 @@
+﻿body {
+}
+#form-current-point {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+.table-2 {
+    width: 400px;
+    margin: 10px auto;
+}
+    .table-2 a {
+        text-decoration: none;
+        color: #fff;
+        background: #ed4457;
+        padding:3px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+.btn-delete-admin {
+    font-size:14px;
+    text-decoration:none;
+    background: darkred;
+    transition:.1s;
+    font-weight:bolder;
+    width: 80px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    color: white;
+}
+    .btn-delete-admin:hover {
+        cursor:pointer;
+        transition: .1s;
+        background: #ed4457;
+        
+    }
+main a {
+    text-decoration: none;
+    color:#333;
+}
+#table-for-participants {
+    color: darkred;
+}

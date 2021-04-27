@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/main.css" runat="server" />
+    <link rel="stylesheet" href="~/css/media.css" runat="server" />
+    <link rel="stylesheet" href="~/css/admin.css" runat="server" />
+    <link rel="stylesheet" href="~/css/media-admin.css" runat="server" />
+    <link rel="stylesheet" href="~/css/loginsecond.css" runat="server" />
+    <link rel="stylesheet" href="~/css/Createfirst.css" runat="server" />
+    <link rel="stylesheet" href="~/css/review.css" runat="server" />
+    <link rel="stylesheet" href="~/css/map-points.css" runat="server" />
+    <link rel="icon" href="~/images/logo-fish.png" runat="server" />
+    <!-- -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet" runat="server" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" runat="server" />
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet" runat="server" />
+    <!--  -->
+    <title>Сплав по Дністрі | Віддих на природі</title>
+
+</head>
+<body>
+    <div class="header-wrap">
+        <header>
+            <div class="logo">
+                <img id="logo-header" src="~/images/logo-fish.png" alt="logo">
+            </div>
+            <div class="menu-mobile">
+                <img id="img-menu" src="~/images/menu.png" alt="menu icon">
+                <div id="menu-content-mobile">
+                    <span id="cl">&#10006;</span>
+                    <div class="menu-mobile-content">
+                        <span id="menu-mobile-span"><a id="menu-header-desc" asp-action="Index" asp-controller="Home">Головна</a></span>
+                        <span id="menu-mobile-span"><a id="menu-header-desc" asp-action="Index" asp-controller="History">Історія</a></span>
+                        <span id="menu-mobile-span"><a id="menu-header-desc" asp-action="Index" asp-controller="Review">Відгуки</a></span>
+                        <span id="menu-mobile-span"><a id="menu-header-desc" asp-action="Index" asp-controller="Contact">Контакти</a></span>
+                        <span id="menu-mobile-span"><a id="menu-header-desc" asp-action="Index" asp-controller="Gallery">Галерея</a></span>
+                        <span id="menu-mobile-span"><a id="menu-header-desc" asp-action="Index" asp-controller="Map">Карта</a></span>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="menu">
+                <span class="positin"><a id="menu-header-desc" asp-action="Index" asp-controller="Home">Головна</a></span>
+                <span class="positin"><a id="menu-header-desc" asp-action="Index" asp-controller="History">Історія</a></span>
+                <span class="positin"><a id="menu-header-desc" asp-action="Index" asp-controller="Review">Відгуки</a></span>
+                <span class="positin"><a id="menu-header-desc" asp-action="Index" asp-controller="Contact">Контакти</a></span>
+                <span class="positin"><a id="menu-header-desc" asp-action="Index" asp-controller="Gallery">Галерея</a></span>
+                @if ((!User.IsInRole("superadmin")) &&(!User.IsInRole("admin")))
+                {
+                    <span class="positin"><a id="menu-header-desc" asp-action="Index" asp-controller="Map">Карта</a></span>
+
+                }
+
+                    @if (User.IsInRole("superadmin"))
+                    {
+                        <span class="positin"><a id="menu-header-desc" asp-action="Index" asp-controller="Users">Адміни</a></span>
+                        <span class="positin"><a id="menu-header-desc" asp-action="ParticipantsInfo" asp-controller="Admin">Учасники</a></span>
+                        <span class="positin"><a id="menu-header-desc" asp-action="MapRedactor" asp-controller="Admin">Редактор Карти</a></span>
+                    }
+
+                    @if (User.IsInRole("admin"))
+                    {
+
+                        <span class="positin"><a id="menu-header-desc" asp-action="ParticipantsInfo" asp-controller="Admin">Учасники</a></span>
+                        <span class="positin"><a id="menu-header-desc" asp-action="MapRedactor" asp-controller="Admin">Редактор Карти</a></span>
+
+                    }
+
+
+
+                </div>
+           
+            <div class="authorization">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <p>@User.Identity.Name</p>
+
+                    <a asp-action="Logout" asp-controller="Account">
+                        <img id="authorization" src="~/images/avtoruzation.png" alt="authorization-people" />
+                    </a>
+
+                }
+                else
+                {
+
+                    <a asp-action="Login" asp-controller="Account">
+                        <img id="authorization" src="~/images/avtoruzation.png" alt="authorization-people" />
+                    </a>
+
+                }
+
+                @*<div id="modal-user">
+        <div class="content-form">
+            <span id="clos">&#10006;</span><br>
+            <h3 id="text-title-req">Форма для авторизації адміністратора</h3>
+            @model Excursion.Models.LoginModel
+            <form asp-action="Login" asp-controller="Account" asp-anti-forgery="true">
+                <div class="validation" asp-validation-summary="ModelOnly"></div>
+                <div>
+                    <div class="form-group">
+                        <label asp-for="Email">Введіть Email</label>
+                        <input type="text" asp-for="Email" />
+                        <span asp-validation-for="Email" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password">Введіть пароль</label>
+                        <input asp-for="Password" />
+                        <span asp-validation-for="Password" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Увійти" class="btn" />
+                    </div>
+                </div>
+            </form>
+        </div>*@
+            </div>
+</div>
+        </header>
+    </div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <div class="footer-wrap">
+        <footer>
+            <div class="content-footer">
+                <div class="menu-footer">
+                    <span><a id="menu-header-desc" asp-action="Index" asp-controller="Home">Головна</a></span>
+                    <span><a id="menu-header-desc" aasp-action="Index" asp-controller="History">Історія</a></span>
+                    <span><a id="menu-header-desc" asp-action="Index" asp-controller="Review">Відгуки</a></span>
+                    <span><a id="menu-header-desc" asp-action="Index" asp-controller="Contact">Контакти</a></span>
+                    <span><a id="menu-header-desc" asp-action="Index" asp-controller="Gallery">Галерея</a></span>
+                    <span><a id="menu-header-desc" asp-action="Index" asp-controller="Map">Карта</a></span>
+                </div>
+                <div class="contact">
+                    <h2>Контакти:</h2>
+                    <p>Email : splyv@gmail.com</p>
+                    <p>Телефон: +38099999999</p>
+                    <p>м. Львів ,вул. Генерала Чупринки 47/2</p>
+                </div>
+                <div class="logo-footer">
+                    <img src="~/images/logo-fish.png" alt="logo">
+                </div>
+            </div>
+        </footer>
+        <div class="basement">
+            © 2021 Сплав по річці Дністер
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+    <script src="script/modalone.js"></script>
+    @*<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxqmzATAQtBe-9ExQBbHLPCrrpQLvsgtk&callback=initMap&libraries=&v=weekly"
+            async></script>
+    <script src="~/script/map.js"></script>*@
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

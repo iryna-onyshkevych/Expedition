@@ -1,0 +1,125 @@
+﻿@model Excursion.Models.GoogleMap
+
+@{
+    ViewBag.Title = "MapRedactor";
+}
+
+<div class="wrap">
+    <div class="map" id="map">
+        <p>
+            maps
+        </p>
+    </div>
+</div>
+
+<div id="modal">
+
+    @if ((User.IsInRole("superadmin")) || User.IsInRole("admin"))
+    {
+        <div class="content-modal">
+            <h3 id="reg-modal-title">Додавання маркерів</h3>
+            <form id="form-req" asp-action="Create" asp-controller="Admin" method="post">
+                <p>Вкажіть назву маркера</p>
+                <input asp-for="MapAddress" id="inp-st-form" type="text" placeholder="Наприклад, точка відправлення">
+                <p>Виберіть точку на карті</p>
+                <input id="marker-place-lat" type="text" placeholder="Lat" asp-for="Lat">
+                <input id="marker-place-long" type="text" placeholder="Long" asp-for="Long">
+                <p>Вкажіть опис маркера</p>
+                <input asp-for="Description" type="text" placeholder="Опис">
+                <p>Вкажіть дату та час маркера</p>
+                <input asp-for="Date" type="datetime-local" placeholder="Опис" />
+                <button id="send-btn" type="submit">Додати</button>
+                @*<div class="form-group">
+            <input type="submit" class="btn btn-default" value="Додати">
+        </div>*@
+            </form>
+        </div>
+    }
+</div>
+<div class="content-modal">
+    <h3 id="reg-modal-title">Вибір поточного місця перебування</h3>
+    <form id = "form-current-point" asp-action="CurrentPoint" asp-controller="Admin" method="post">
+        <p>Оберіть точку: </p>
+        <select asp-for="Id">
+            @foreach (var item in ViewBag.ListOfDropdown)
+            {
+                <option value="@item.Id">@item.MapAddress</option>
+
+            }
+        </select>
+        <button  id="send-btn" type="submit">Обрати</button>
+    </form>
+</div>
+<table class="table-2">
+
+    @foreach (var item in ViewBag.ListOfDropdown)
+    {
+        <tr>
+            <td>@item.MapAddress</td>
+            <td>
+                <a asp-action="PointEdit" asp-controller="Admin" asp-route-id="@item.Id">Редагувати</a> |
+                <a asp-action="PointDelete" asp-controller="Admin" asp-route-id="@item.Id">Видалити</a>
+            </td>
+        </tr>
+    }
+</table>
+<script>
+    let mainMap;
+    const markerPlaceLat = document.getElementById('marker-place-lat');
+    const markerPlaceLong = document.getElementById('marker-place-long');
+    const map = document.getElementById("map");
+    function initMap() {
+
+        mainMap = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: 48.546613, lng: 27.097443 },
+            zoom: 11
+        });
+        $.get("@Url.Action("GetAllLocation", "Map")", function (data, status) {
+            let marker = [];
+            console.log(data)
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].active) {
+                    marker[i] = new google.maps.Marker({
+                        position: {
+                            lat: +data[i].lat,
+                            lng: +data[i].long
+                        },
+                        map: mainMap,
+                        title: data[i].mapAddress,
+                        icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/info-i_maps.png"
+                    });
+                } else {
+                    marker[i] = new google.maps.Marker({
+                        position: {
+                            lat: +data[i].lat,
+                            lng: +data[i].long
+                        },
+                        map: mainMap,
+                        title: data[i].mapAddress
+                    });
+                }
+                const contentString =
+                    '<div>' +
+                    data[i].description +
+                    '</div>' +
+                    '<br>' +
+                    '<div>' +
+                    data[i].date +
+                    '</div>';
+                let infoWindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+                marker[i].addListener('click', function () {
+                    infoWindow.open(mainMap, marker[i]);
+                });
+            }
+        })
+        mainMap.addListener('click', mapsMouseEvent => {
+            markerPlaceLat.value = mapsMouseEvent.latLng.toJSON().lat;
+            markerPlaceLong.value = mapsMouseEvent.latLng.toJSON().lng;
+        })
+    }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxqmzATAQtBe-9ExQBbHLPCrrpQLvsgtk&callback=initMap&libraries=&v=weekly"
+        async></script>

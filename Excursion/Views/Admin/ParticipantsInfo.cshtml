@@ -1,0 +1,60 @@
+﻿@using Excursion.Models
+@model IEnumerable<Participant>
+@{
+    Layout = "_Layout";
+}
+<div class="wrap">
+
+    @Html.ActionLink("Download Text File", "CreateFile", "Admin")
+    <span id="contents"></span>
+
+    <div class="part">
+
+
+        <div class="text-center">
+            <h1 class="display-4">Participants Info</h1>
+        </div>
+
+        @foreach (Participant p in Model)
+        {
+    <tr >
+        <label id="table-for-participants">Ім'я:</label>
+        <td>@p.ParticipantName</td>
+        <br>
+        <label id="table-for-participants">Прізвище:</label>
+        <td>@p.ParticipantSurname</td>
+        <br>
+        <label id="table-for-participants">Номер телефону:</label>
+
+        <td>@p.PhoneNumber</td>
+        <br>
+
+        <label id="table-for-participants">Мейл:</label>
+
+
+        <td>@p.Email</td>
+        <br>
+
+        <label id="table-for-participants">Кількість учасників:</label>
+
+        <td>@p.ParticipantsNumber</td>
+        <br>
+        <label id="table-for-participants">Початкова точка:</label>
+
+        <td>@p.FirstPoint</td>
+        <br>
+        <label id="table-for-participants">Кінцева точка:</label>
+
+        <td>@p.LastPoint</td>
+        <br>
+        <br>
+    </tr>
+        }
+
+
+
+
+    </div>
+
+</div>
+

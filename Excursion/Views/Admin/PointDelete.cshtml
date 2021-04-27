@@ -1,0 +1,46 @@
+﻿@model Excursion.Models.GoogleMap
+@{
+    ViewBag.Title = "Видалення точки";
+}
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>Адреса</dt>
+        <dd>
+            @Html.DisplayFor(model => model.MapAddress)
+        </dd>
+
+        <dt>Опис</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>Дата та час</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dd>
+            @if (Model.Active == true)
+            {
+                <a>Поточна точка</a>
+            }
+        </dd>
+        <dt>Широта</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Lat)
+        </dd>
+
+        <dt>Довгота</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Long)
+        </dd>
+    </dl>
+
+    <div>
+        <form asp-controller="Admin" asp-action="PointDelete" method="post">
+            <div class="form-group">
+                <input type="submit" class="btn btn-default" value="Видалити" />
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,142 @@
+﻿
+
+<div class="wrap">
+
+
+
+    <span id="contents"></span>
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <a id="map-s" asp-action="Index" asp-controller="Map"><button id="btn-id-foot">ЗАПИСАТИСЯ НА СПЛАВ</button></a>
+    }
+    <section class="gallery-section" id="gallerys">
+        <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h1>Галерея</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="gallery-item " onclick="openModal();currentSlide(1)">
+                    <div class="gallery-item-inner">
+                        <img src="images/sliders1.jpg" alt="service">
+                        <div class="overlay">
+                            <h4>Фото Дністра з висоти</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner" onclick="openModal();currentSlide(2)">
+                        <img src="images/Dniester-River-Moldova.jpg" alt="service">
+                        <div class="overlay">
+                            <h4>Фото учасників експедиції</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner" onclick="openModal();currentSlide(3)">
+                        <img src="images/splav-dnister.jfif" alt="service">
+                        <div class="overlay">
+                            <h4>Сплав по Дністрі</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner" onclick="openModal();currentSlide(4)">
+                        <img src="images/dnister.jpg" alt="service">
+                        <div class="overlay">
+                            <h4>Учасники експедиції "Дністер"</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner" onclick="openModal();currentSlide(5)">
+                        <img src="images/dnister2.jfif" alt="service">
+                        <div class="overlay">
+                            <h4>Учасники експедиції</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner" onclick="openModal();currentSlide(6)">
+                        <img src="images/namet.jfif" alt="service">
+                        <div class="overlay">
+                            <h4>Палатки учасників експедиції</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+
+            <div class="mySlides">
+                <div class="numbertext">1 / 6</div>
+                <img src="images/sliders1.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 6</div>
+                <img src="images/Dniester-River-Moldova.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 6</div>
+                <img src="images/splav-dnister.jfif" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4 / 6</div>
+                <img src="images/dnister.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">5 / 6</div>
+                <img src="images/dnister2.jfif" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">6/ 6</div>
+                <img src="images/namet.jfif" style="width:100%">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+            <div class="allimg">
+                <div class="column">
+                    <img class="demo cursor" src="images/sliders1.jpg" style="width:100%" onclick="currentSlide(1)"
+                         alt="Фото Дністра з висоти пташиного польоту ">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="images/Dniester-River-Moldova.jpg" style="width:100%" onclick="currentSlide(2)"
+                         alt="Учасники експедиції">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="images/splav-dnister.jfif" style="width:100%" onclick="currentSlide(3)"
+                         alt="Фото групи">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="images/dnister.jpg" style="width:100%" onclick="currentSlide(4)"
+                         alt="Учасники експедиції">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="images/dnister2.jfif" style="width:100%" onclick="currentSlide(5)"
+                         alt="Учасники експедиції  ">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="images/namet.jfif" style="width:100%" onclick="currentSlide(6)"
+                         alt="Палатки учасників">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

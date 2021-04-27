@@ -1,0 +1,10 @@
+@media (max-width:1700px){
+    .menu-mobile{
+        display: flex;
+        flex: 2;
+        justify-content: center;
+    }
+    .menu{
+        display: none;
+    }
+}

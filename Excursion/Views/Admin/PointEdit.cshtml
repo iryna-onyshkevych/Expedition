@@ -1,0 +1,29 @@
+﻿@model Excursion.Models.GoogleMap
+@{
+    ViewBag.Title = "Редагування точки";
+}
+<form asp-action="PointEdit" asp-controller="Admin" asp-route-id="@Model.Id">
+    <div class="form-group">
+        <label asp-for=" MapAddress" class="control-label">Адреса</label>
+        <input type="text" asp-for="MapAddress" class="form-control" />
+    </div>
+    <div class="form-group" style="display:none" >
+        <label asp-for=" Lat" class="control-label">Широта</label>
+        <input type="text" asp-for="Lat" class="form-control" />
+    </div>
+    <div class="form-group" style="display:none">
+        <label asp-for=" Long">Довгота</label>
+        <input type="text" asp-for="Long" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="control-label">Опис</label>
+        <input type="text" asp-for="Description" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Date" class="control-label">Дата</label>
+        <input type="datetime-local" asp-for="Date" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Зберегти" class="btn btn-default" />
+    </div>
+</form>

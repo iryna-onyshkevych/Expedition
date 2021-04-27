@@ -1,0 +1,130 @@
+@media (max-width:1450px){
+    .menu-mobile{
+        display: flex;
+        flex: 2;
+        justify-content: center;
+    }
+    .menu{
+        display: none;
+    }
+    .card-back{
+        height: auto;
+        padding: 10px 0px 10px 0px;
+    }
+    .contact{
+        font-size: 10px;
+    }
+    #description-left {
+        font-size: 15px;
+    }
+    #description{
+        font-size: 15px;
+    }
+}
+
+@media (max-width:1000px){
+    #description {
+        padding-right: 0px;
+        font-size:14px;
+        padding-top: 0;
+    }
+    
+    .card-nature{
+        grid-template-columns: 100%;
+    }
+    .card{
+        width: 60%;
+    }
+    #description-left {
+        padding-left: 0px;
+        padding-top: 0;
+        font-size:14px;
+    }
+    .block1, .block2{
+        grid-template-columns: 100%;
+        text-align: center;
+    }
+    #title-content-see {
+        padding: 0px;
+        font-size: 14px;
+    }
+    .card-wrap{
+        height: 400px;
+    }
+}
+
+
+@media (max-width: 850px){
+    
+    
+    .content-footer {
+        grid-template-columns: 50% 50%;
+    }
+    .logo-footer{
+        display: none;
+    }
+    #ph-history {
+        padding: 20px 0px 0px 0px;
+        display: block;
+        margin: auto;
+        float: none;
+    }
+    #ph-history-right{
+        padding: 20px 0px 0px 20px;
+        display: block;
+        margin: auto;
+        float: none;
+      }
+}
+
+@media (max-width:550px){
+    .card {
+        width: 85%;
+        height: 97%;
+    }
+}
+@media (max-width: 500px){
+    #content-title-text{
+        width: 100%;
+        font-size: 22px;
+        text-align: center;
+        margin-left: 0px;
+    }
+    .content-footer {
+        grid-template-columns: 100%;
+    }
+    .contact{
+        text-align: center;
+    }
+    .menu-footer{
+        height: 170px;
+    }
+    #btn-modal{
+        font-size: 14px;
+        margin-left: auto;
+        margin-right: auto;   
+    }
+    .block-contact{
+        grid-template-columns: 100%;
+    }
+    #jak{
+        display: flex;
+        justify-content: center;
+    }
+    #img-phone{
+        margin: auto;
+        display: flex;
+    }
+    #btn-modal {
+        margin-top: 275px;
+    }
+    #rev-people, #name-people {
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+

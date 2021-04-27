@@ -1,0 +1,41 @@
+#title-review{
+    text-align: center;
+    letter-spacing: 5px;
+}
+#form-review{
+    max-width: 350px;
+    background: #FCF6F6;
+    margin: auto;
+    padding-left: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+#review-input{
+    width: 80%;
+    border: 2px solid #B9A7A7;
+}
+#btn-review{
+    background: #ED4457;
+    border: none;
+    width: 160px;
+    height: 30px;
+    color: white;
+    margin-top: 10px;
+}
+.people-rev{
+    background: #C9BBBB;
+    border: 2px solid #7E3C3C;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+#time{
+    float: right;
+    margin-right: 10px;
+}
+#rev-people, #name-people{
+    margin-left: 30px;
+}
