@@ -1,4 +1,5 @@
 ﻿using Excursion.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using System.Collections.Generic;
@@ -16,15 +17,16 @@ namespace Excursion.Controllers
         {
             _context = context;
         }
+
         private readonly string connection = @"Data Source=.\SQLEXPRESS;Initial Catalog=expeditiondb;Integrated Security=True";
 
-        //[Authorize(Roles = "superadmin, admin")]
+        [Authorize(Roles = "superadmin, admin")]
         public IActionResult ParticipantsInfo()
         {
-
             List<Participant> participants = _context.Participants.ToList();
             return View(participants);
         }
+
         public FileStreamResult CreateFile()
         {
             string txt = string.Empty;
@@ -69,28 +71,24 @@ namespace Excursion.Controllers
 
             var byteArray = Encoding.ASCII.GetBytes(txt);
             var stream = new MemoryStream(byteArray);
-
             return File(stream, "text/plain", "ParticipantList.txt");
-
-
         }
+
         public JsonResult GetAllLocation()
         {
             var data = _context.GoogleMaps.ToList();
             return Json(data);
         }
+
         public IActionResult MapRedactor()
         {
-            //ViewBag.Participants = _context.Participants.ToList();
             ViewBag.ListOfDropdown = _context.GoogleMaps.ToList();
             return View();
         }
 
-
         [HttpPost]
         public ActionResult Create(GoogleMap map)
         {
-
             _context.GoogleMaps.Add(map);
             _context.SaveChanges();
             return RedirectToAction("MapRedactor", "Admin");
@@ -110,6 +108,7 @@ namespace Excursion.Controllers
 
             return RedirectToAction("MapRedactor", "Admin");
         }
+
         public IActionResult PointEdit(int? id)
         {
             if (id != null)
@@ -120,6 +119,7 @@ namespace Excursion.Controllers
             }
             return NotFound();
         }
+
         [HttpPost]
         public IActionResult PointEdit(GoogleMap map)
         {
@@ -156,9 +156,9 @@ namespace Excursion.Controllers
             }
             return NotFound();
         }
+
         public ActionResult AddParticipant(Participant participant)
         {
-
             _context.Participants.Add(participant);
             _context.SaveChanges();
             return RedirectToAction("Index", "Map");

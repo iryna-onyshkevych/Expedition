@@ -11,18 +11,22 @@
             <div class="form-group">
                 <label asp-for="Email">Введіть Логін: </label>
                 <input type="text" asp-for="Email" placeholder="LOGIN" />
-                <span asp-validation-for="Email" />
+                <span asp-validation-for="Email" class="text-danger"  />
             </div>
             <div class="form-group">
                 <label asp-for="Password">Введіть Пароль: </label>
                 <input asp-for="Password" placeholder="PASSWORD" />
-                <span asp-validation-for="Password" />
+                <span asp-validation-for="Password" class="text-danger"  />
             </div>
             <div class="form-group">
                 <input type="submit" value="Увійти" class="btn" />
             </div>
-            </div>
+        </div>
     </form>
-   
-        <a asp-controller="Account" asp-action="ForgotPassword">Забув(-ла) пароль</a>
-    </div>
+
+    <a asp-controller="Account" asp-action="ForgotPassword">Забув(-ла) пароль</a>
+</div>
+@section scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

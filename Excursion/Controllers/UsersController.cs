@@ -22,14 +22,6 @@ namespace Excursion.Controllers
         public async Task<IActionResult> Index()
         {
             var allusers = _userManager.Users.ToList();
-            //foreach (var a in allusers)
-            //{
-            //    var userRoles = await _userManager.GetRolesAsync(a);
-                
-            //    //if (userRoles[0] == "admin")
-            //    //    return Content(a.Email);
-            //}
-
             return View(allusers);
         }
 
@@ -106,7 +98,5 @@ namespace Excursion.Controllers
             }
             return RedirectToAction("Index", "Users");
         }
-
     }
-
 }

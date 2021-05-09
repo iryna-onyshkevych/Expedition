@@ -17,8 +17,8 @@ namespace Excursion.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
             _context = context;
-
         }
+
         [HttpGet]
         public IActionResult Login(string returnUrl = null)
         {
@@ -60,12 +60,14 @@ namespace Excursion.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Login", "Account");
         }
+
         [HttpGet]
         [AllowAnonymous]
         public IActionResult ForgotPassword()
         {
             return View();
         }
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -90,6 +92,7 @@ namespace Excursion.Controllers
             }
             return View(model);
         }
+
         [HttpGet]
         [AllowAnonymous]
         public IActionResult ResetPassword(string code = null)

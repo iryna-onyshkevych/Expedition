@@ -4,8 +4,8 @@ namespace Excursion.Models
 {
     public class ResetPasswordViewModel
     {
-        [Required]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "Некоректний запис пошти!")]
+        [Required(ErrorMessage = "Будь ласка, введіть пошту!")]
         public string Email { get; set; }
 
         [Required]
@@ -17,7 +17,6 @@ namespace Excursion.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "Паролі не збігаються")]
         public string ConfirmPassword { get; set; }
-
         public string Code { get; set; }
     }
 }

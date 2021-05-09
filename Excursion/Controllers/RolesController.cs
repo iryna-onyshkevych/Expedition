@@ -17,8 +17,8 @@ namespace Excursion.Controllers
             _userManager = userManager;
         }
         public IActionResult Index() => View(_roleManager.Roles.ToList());
-
         public IActionResult Create() => View();
+
         [HttpPost]
         public async Task<IActionResult> Create(string name)
         {
@@ -69,9 +69,9 @@ namespace Excursion.Controllers
                 };
                 return View(model);
             }
-
             return NotFound();
         }
+
         [HttpPost]
         public async Task<IActionResult> Edit(string userId, List<string> roles)
         {
@@ -82,14 +82,10 @@ namespace Excursion.Controllers
                 var allRoles = _roleManager.Roles.ToList();
                 var addedRoles = roles.Except(userRoles);
                 var removedRoles = userRoles.Except(roles);
-
                 await _userManager.AddToRolesAsync(user, addedRoles);
-
                 await _userManager.RemoveFromRolesAsync(user, removedRoles);
-
                 return RedirectToRoute(new { controller = "Users", action = "Index" });
             }
-
             return NotFound();
         }
     }

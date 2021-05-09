@@ -21,11 +21,15 @@
             <form id="form-req" asp-action="Create" asp-controller="Admin" method="post">
                 <p>Вкажіть назву маркера</p>
                 <input asp-for="MapAddress" id="inp-st-form" type="text" placeholder="Наприклад, точка відправлення">
+                <span asp-validation-for="StartDate" class="text-danger" />
                 <p>Виберіть точку на карті</p>
                 <input id="marker-place-lat" type="text" placeholder="Lat" asp-for="Lat">
+                <span asp-validation-for="StartDate" class="text-danger" />
                 <input id="marker-place-long" type="text" placeholder="Long" asp-for="Long">
+                <span asp-validation-for="StartDate" class="text-danger" />
                 <p>Вкажіть опис маркера</p>
                 <input asp-for="Description" type="text" placeholder="Опис">
+                <span asp-validation-for="StartDate" class="text-danger" />
                 <p>Вкажіть початкову дату маркера</p>
                 <input asp-for="StartDate" type="date" placeholder="Опис" />
                 <p>Вкажіть кінцеву дату маркера</p>
@@ -40,7 +44,7 @@
 </div>
 <div class="content-modal">
     <h3 id="reg-modal-title">Вибір поточного місця перебування</h3>
-    <form id = "form-current-point" asp-action="CurrentPoint" asp-controller="Admin" method="post">
+    <form id="form-current-point" asp-action="CurrentPoint" asp-controller="Admin" method="post">
         <p>Оберіть точку: </p>
         <select asp-for="Id">
             @foreach (var item in ViewBag.ListOfDropdown)
@@ -49,7 +53,7 @@
 
             }
         </select>
-        <button  id="send-btn" type="submit">Обрати</button>
+        <button id="send-btn" type="submit">Обрати</button>
     </form>
 </div>
 <table class="table-2">
@@ -129,3 +133,7 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxqmzATAQtBe-9ExQBbHLPCrrpQLvsgtk&callback=initMap&libraries=&v=weekly"
         async></script>
+@section scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
