@@ -7,7 +7,7 @@
         <label asp-for=" MapAddress" class="control-label">Адреса</label>
         <input type="text" asp-for="MapAddress" class="form-control" />
     </div>
-    <div class="form-group" style="display:none" >
+    <div class="form-group" style="display:none">
         <label asp-for=" Lat" class="control-label">Широта</label>
         <input type="text" asp-for="Lat" class="form-control" />
     </div>
@@ -15,13 +15,21 @@
         <label asp-for=" Long">Довгота</label>
         <input type="text" asp-for="Long" class="form-control" />
     </div>
+    <div class="form-group" style="display:none">
+        <label asp-for="Active" class="control-label">Поточне місце перебування</label>
+        <input type="checkbox" asp-for="Active" class="form-control" />
+    </div>
     <div class="form-group">
         <label asp-for="Description" class="control-label">Опис</label>
         <input type="text" asp-for="Description" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="Date" class="control-label">Дата</label>
-        <input type="datetime-local" asp-for="Date" class="form-control" />
+        <label asp-for="StartDate" class="control-label">Початкова дата</label>
+        <input type="date" asp-for="StartDate" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="FinishDate" class="control-label">Кінцева дата</label>
+        <input type="date" asp-for="FinishDate" class="form-control" />
     </div>
     <div class="form-group">
         <input type="submit" value="Зберегти" class="btn btn-default" />

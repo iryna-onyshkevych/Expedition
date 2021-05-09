@@ -9,7 +9,9 @@ namespace Excursion.Models
         public string Lat { get; set; }
         public string Long { get; set; }
         public string Description { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime FinishDate { get; set; }
+
         public bool Active { get; set; }
     }
 }

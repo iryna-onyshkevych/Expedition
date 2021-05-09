@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Excursion.Models
@@ -10,6 +11,7 @@ namespace Excursion.Models
         public DbSet<Participant> Participants { get; set; }
         public DbSet<GoogleMap> GoogleMaps { get; set; }
 
+
         //public virtual DbSet<google_map> google_map { get; set; }
 
         public DbSet<User> AspNetUsers { get; set; }
@@ -18,6 +20,13 @@ namespace Excursion.Models
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
           : base(options)
         {
+            Database.EnsureCreated();
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+           
+            base.OnModelCreating(modelBuilder);
+           
         }
     }
 }

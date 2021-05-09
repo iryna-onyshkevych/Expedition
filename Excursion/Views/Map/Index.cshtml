@@ -28,18 +28,13 @@
 
     <form id="form-req" method="post" asp-controller="Map" asp-action="Register">
         <p>Вкажіть ваше ім'я</p>
-        <input id="inp-st-form" type="text" placeholder="Наприклад, Іван"  asp-for="ParticipantName" >
+        <input id="inp-st-form" type="text" placeholder="Наприклад, Іван" asp-for="ParticipantName">
         <p>Вкажіть ваше прізвище</p>
-        <input id="inp-st-form" type="text" placeholder="Наприклад, Іванов" asp-for="ParticipantSurname" >
+        <input id="inp-st-form" type="text" placeholder="Наприклад, Іванов" asp-for="ParticipantSurname">
         <p>Вкажіть ваш моб. телефон</p>
-        <input id="inp-st-form" type="text" placeholder="+38096632541"  asp-for="PhoneNumber">
+        <input id="inp-st-form" type="text" placeholder="+38096632541" asp-for="PhoneNumber">
         <p>К-сть місць для бронювання</p>
-        <select id="inp-st-form"   asp-for="ParticipantsNumber">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
+        <input id="inp-st-form" type="text" placeholder="5" asp-for="ParticipantsNumber">
         <p>Початкова точка відправлення: </p>
         <select id="inp-st-form" asp-for="FirstPoint">
             @foreach (var item in ViewBag.ListOfDropdown)
@@ -57,7 +52,7 @@
             }
         </select>
         <p>Ваш email</p>
-        <input id="inp-st-form" type="email" placeholder="alina@gmail.com"  asp-for="Email">
+        <input id="inp-st-form" type="email" placeholder="alina@gmail.com" asp-for="Email">
         <p></p>
         <button id="send-btn">Надіслати заявку</button>
     </form>
@@ -106,7 +101,11 @@
                     '</div>' +
                     '<br>' +
                     '<div>' +
-                    data[i].date +
+                    data[i].startDate +
+                    '</div>' +
+                    '<br>' +
+                    '<div>' +
+                    data[i].finishDate +
                     '</div>';
                 let infoWindow = new google.maps.InfoWindow({
                     content: contentString

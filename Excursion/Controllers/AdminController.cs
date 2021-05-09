@@ -21,6 +21,7 @@ namespace Excursion.Controllers
         //[Authorize(Roles = "superadmin, admin")]
         public IActionResult ParticipantsInfo()
         {
+
             List<Participant> participants = _context.Participants.ToList();
             return View(participants);
         }
@@ -44,9 +45,10 @@ namespace Excursion.Controllers
 
                             foreach (DataColumn column in dt.Columns)
                             {
-                                txt += column.ColumnName + "\t\t";
+                                txt += column.ColumnName + " ";
                             }
 
+                            txt += "\r\n";
                             txt += "\r\n";
 
                             foreach (DataRow row in dt.Rows)
