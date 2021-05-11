@@ -42,17 +42,12 @@ namespace Excursion.Controllers
                         using (DataTable dt = new DataTable())
                         {
                             sda.Fill(dt);
-
-                            //Build the Text file data.
-
                             foreach (DataColumn column in dt.Columns)
                             {
                                 txt += column.ColumnName + " ";
                             }
-
                             txt += "\r\n";
                             txt += "\r\n";
-
                             foreach (DataRow row in dt.Rows)
                             {
                                 foreach (DataColumn column in dt.Columns)
@@ -87,7 +82,7 @@ namespace Excursion.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(GoogleMap map)
+        public IActionResult Create(GoogleMap map)
         {
             _context.GoogleMaps.Add(map);
             _context.SaveChanges();
@@ -95,7 +90,7 @@ namespace Excursion.Controllers
         }
 
         [HttpPost]
-        public ActionResult CurrentPoint(GoogleMap map)
+        public IActionResult CurrentPoint(GoogleMap map)
         {
             foreach(var point in _context.GoogleMaps)
             {

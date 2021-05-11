@@ -12,9 +12,6 @@
         <tr>
             <td>@user.Email</td>
             <td>
-                @*<a class="btn btn-sm btn-primary" asp-action="Delete" asp-route-id="@user.Id" method="post">
-                        Видалити
-                    </a>*@
                 <form asp-action="Delete" asp-route-id="@user.Id" method="post">
                     <button type="submit" class="btn-delete-admin">
                         Видалити

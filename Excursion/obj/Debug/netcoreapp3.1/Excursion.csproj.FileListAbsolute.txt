@@ -885,3 +885,5 @@ C:\Users\irini\OneDrive\Робочий стіл\ЧМ(практичні)\projeec
 C:\Users\irini\OneDrive\Робочий стіл\ЧМ(практичні)\projeect\Excursion\obj\Debug\netcoreapp3.1\Excursion.genruntimeconfig.cache
 C:\Users\irini\OneDrive\Робочий стіл\ЧМ(практичні)\projeect\Excursion\obj\Debug\netcoreapp3.1\Razor\Views\Admin\PointDelete.cshtml.g.cs
 C:\Users\irini\OneDrive\Робочий стіл\ЧМ(практичні)\projeect\Excursion\obj\Debug\netcoreapp3.1\Razor\Views\Admin\PointEdit.cshtml.g.cs
+C:\Users\irini\OneDrive\Робочий стіл\ЧМ(практичні)\projeect\Excursion\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\irini\OneDrive\Робочий стіл\ЧМ(практичні)\projeect\Excursion\bin\Debug\netcoreapp3.1\Moq.dll
