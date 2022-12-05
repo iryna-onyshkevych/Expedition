@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\irini\\OneDrive\\Робочий стіл\\ЧМ(практичні)\\projeect\\Excursion.Tests\\Excursion.Tests.csproj": {}
+    "D:\\univer\\Project\\Expedition\\Excursion.Tests\\Excursion.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\irini\\OneDrive\\Робочий стіл\\ЧМ(практичні)\\projeect\\Excursion.Tests\\Excursion.Tests.csproj": {
+    "D:\\univer\\Project\\Expedition\\Excursion.Tests\\Excursion.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\irini\\OneDrive\\Робочий стіл\\ЧМ(практичні)\\projeect\\Excursion.Tests\\Excursion.Tests.csproj",
+        "projectUniqueName": "D:\\univer\\Project\\Expedition\\Excursion.Tests\\Excursion.Tests.csproj",
         "projectName": "Excursion.Tests",
-        "projectPath": "C:\\Users\\irini\\OneDrive\\Робочий стіл\\ЧМ(практичні)\\projeect\\Excursion.Tests\\Excursion.Tests.csproj",
-        "packagesPath": "C:\\Users\\irini\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\irini\\OneDrive\\Робочий стіл\\ЧМ(практичні)\\projeect\\Excursion.Tests\\obj\\",
+        "projectPath": "D:\\univer\\Project\\Expedition\\Excursion.Tests\\Excursion.Tests.csproj",
+        "packagesPath": "C:\\Users\\Yarema\\.nuget\\packages\\",
+        "outputPath": "D:\\univer\\Project\\Expedition\\Excursion.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\irini\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Yarema\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\irini\\OneDrive\\Робочий стіл\\ЧМ(практичні)\\projeect\\Excursion\\Excursion.csproj": {
-                "projectPath": "C:\\Users\\irini\\OneDrive\\Робочий стіл\\ЧМ(практичні)\\projeect\\Excursion\\Excursion.csproj"
+              "D:\\univer\\Project\\Expedition\\Excursion\\Excursion.csproj": {
+                "projectPath": "D:\\univer\\Project\\Expedition\\Excursion\\Excursion.csproj"
               }
             }
           }
@@ -75,21 +75,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\irini\\OneDrive\\Робочий стіл\\ЧМ(практичні)\\projeect\\Excursion\\Excursion.csproj": {
+    "D:\\univer\\Project\\Expedition\\Excursion\\Excursion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\irini\\OneDrive\\Робочий стіл\\ЧМ(практичні)\\projeect\\Excursion\\Excursion.csproj",
+        "projectUniqueName": "D:\\univer\\Project\\Expedition\\Excursion\\Excursion.csproj",
         "projectName": "Excursion",
-        "projectPath": "C:\\Users\\irini\\OneDrive\\Робочий стіл\\ЧМ(практичні)\\projeect\\Excursion\\Excursion.csproj",
-        "packagesPath": "C:\\Users\\irini\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\irini\\OneDrive\\Робочий стіл\\ЧМ(практичні)\\projeect\\Excursion\\obj\\",
+        "projectPath": "D:\\univer\\Project\\Expedition\\Excursion\\Excursion.csproj",
+        "packagesPath": "C:\\Users\\Yarema\\.nuget\\packages\\",
+        "outputPath": "D:\\univer\\Project\\Expedition\\Excursion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\irini\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Yarema\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -158,7 +158,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

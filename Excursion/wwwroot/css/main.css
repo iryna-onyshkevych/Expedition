@@ -1,4 +1,4 @@
-@import 'rev.css';
+﻿@import 'rev.css';
 @import 'contact.css';
 @import 'galery.css';
 
@@ -68,7 +68,7 @@ header {
 .content {
   background-repeat: no-repeat;
   height: 450px;
-  background-image: url(img/Dniester_River_in_Halych.jpg);
+  background-image: url(img/LNU.jpg);
   background-position: center;
 }
 #content-title-text {
