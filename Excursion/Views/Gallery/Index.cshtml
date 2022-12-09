@@ -5,7 +5,10 @@
 
 
     <span id="contents"></span>
-   
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <a id="map-s" asp-action="Index" asp-controller="Map"><button id="btn-id-foot">ДІЗНАТИСЬ БІЛЬШЕ</button></a>
+    }
     <section class="gallery-section" id="gallerys">
         <div class="container">
             <div class="row">
@@ -16,49 +19,26 @@
             <div class="row">
                 <div class="gallery-item " onclick="openModal();currentSlide(1)">
                     <div class="gallery-item-inner">
-                        <img src="images/sliders1.jpg" alt="service">
+                        <img src="images/students_erasmus_1.jpg" alt="service">
                         <div class="overlay">
-                            <h4>Фото Дністра з висоти</h4>
+                            <h4>Учасники програм</h4>
                         </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-item-inner" onclick="openModal();currentSlide(2)">
-                        <img src="images/Dniester-River-Moldova.jpg" alt="service">
-                        <div class="overlay">
-                            <h4>Фото учасників експедиції</h4>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="gallery-item">
                     <div class="gallery-item-inner" onclick="openModal();currentSlide(3)">
-                        <img src="images/splav-dnister.jfif" alt="service">
+                        <img src="images/erasmus_4.png" alt="service">
                         <div class="overlay">
-                            <h4>Сплав по Дністрі</h4>
+                            <h4>Зустріч з переможцями Erasmus+</h4>
                         </div>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-item-inner" onclick="openModal();currentSlide(4)">
-                        <img src="images/dnister.jpg" alt="service">
+                        <img src="images/erasmus_3.png" alt="service">
                         <div class="overlay">
-                            <h4>Учасники експедиції "Дністер"</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-item-inner" onclick="openModal();currentSlide(5)">
-                        <img src="images/dnister2.jfif" alt="service">
-                        <div class="overlay">
-                            <h4>Учасники експедиції</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-item-inner" onclick="openModal();currentSlide(6)">
-                        <img src="images/namet.jfif" alt="service">
-                        <div class="overlay">
-                            <h4>Палатки учасників експедиції</h4>
+                            <h4>Зустріч з представниками Еразмус-офісу"</h4>
                         </div>
                     </div>
                 </div>
@@ -71,34 +51,21 @@
         <div class="modal-content">
 
             <div class="mySlides">
-                <div class="numbertext">1 / 6</div>
-                <img src="images/sliders1.jpg" style="width:100%">
+                <div class="numbertext">1 / 4</div>
+                <img src="images/students_erasmus_1.jpg" style="width:100%">
+            </div>
+
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 4</div>
+                <img src="images/erasmus_4.png" style="width:100%">
             </div>
 
             <div class="mySlides">
-                <div class="numbertext">2 / 6</div>
-                <img src="images/Dniester-River-Moldova.jpg" style="width:100%">
+                <div class="numbertext">4 / 4</div>
+                <img src="images/erasmus_3.png" style="width:100%">
             </div>
 
-            <div class="mySlides">
-                <div class="numbertext">3 / 6</div>
-                <img src="images/splav-dnister.jfif" style="width:100%">
-            </div>
-
-            <div class="mySlides">
-                <div class="numbertext">4 / 6</div>
-                <img src="images/dnister.jpg" style="width:100%">
-            </div>
-
-            <div class="mySlides">
-                <div class="numbertext">5 / 6</div>
-                <img src="images/dnister2.jfif" style="width:100%">
-            </div>
-
-            <div class="mySlides">
-                <div class="numbertext">6/ 6</div>
-                <img src="images/namet.jfif" style="width:100%">
-            </div>
 
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -109,28 +76,17 @@
 
             <div class="allimg">
                 <div class="column">
-                    <img class="demo cursor" src="images/sliders1.jpg" style="width:100%" onclick="currentSlide(1)"
-                         alt="Фото Дністра з висоти пташиного польоту ">
+                    <img class="demo cursor" src="images/students_erasmus_1.jpg" style="width:100%" onclick="currentSlide(1)"
+                         alt="Учасники програм">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="images/erasmus_4.png" style="width:100%" onclick="currentSlide(3)"
+                         alt="Зустріч з переможцями Erasmus+">
                 </div>
                 <div class="column">
-                    <img class="demo cursor" src="images/Dniester-River-Moldova.jpg" style="width:100%" onclick="currentSlide(2)"
-                         alt="Учасники експедиції">
-                </div>
-                <div class="column">
-                    <img class="demo cursor" src="images/splav-dnister.jfif" style="width:100%" onclick="currentSlide(3)"
-                         alt="Фото групи">
-                </div>
-                <div class="column">
-                    <img class="demo cursor" src="images/dnister.jpg" style="width:100%" onclick="currentSlide(4)"
-                         alt="Учасники експедиції">
-                </div>
-                <div class="column">
-                    <img class="demo cursor" src="images/dnister2.jfif" style="width:100%" onclick="currentSlide(5)"
-                         alt="Учасники експедиції  ">
-                </div>
-                <div class="column">
-                    <img class="demo cursor" src="images/namet.jfif" style="width:100%" onclick="currentSlide(6)"
-                         alt="Палатки учасників">
+                    <img class="demo cursor" src="images/erasmus_3.png" style="width:100%" onclick="currentSlide(4)"
+                         alt="Зустріч з представниками Еразмус-офісу">
                 </div>
             </div>
         </div>

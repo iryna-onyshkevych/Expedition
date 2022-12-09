@@ -10,7 +10,7 @@ namespace Excursion.Models
         public async Task SendEmailAsync(string email, string subject, string message)
         {
             var emailMessage = new MimeMessage();
-            emailMessage.From.Add(new MailboxAddress("Адміністрація сайту Сплав по Дністру", "olena.business2021@gmail.com"));
+            emailMessage.From.Add(new MailboxAddress("Адміністрація сайту", "olena.business2021@gmail.com"));
             emailMessage.To.Add(new MailboxAddress("", email));
             emailMessage.Subject = subject;
             emailMessage.Body = new TextPart(MimeKit.Text.TextFormat.Html)

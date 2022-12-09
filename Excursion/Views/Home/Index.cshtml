@@ -8,65 +8,35 @@
 
     <div class="content">
         <div class="text-content">
-            <h1 id="content-title-text">МІЖНАРОДНА ДІЯЛЬНІСТЬ<br> ЛЬВІВСЬКОГО Н. У.<br> ІМ. ІВАНА ФРАНКА</h1>
+            <h1 id="content-title-text">МІЖНАРОДНІ<br> ПРОЄКТИ В ЛНУ</h1>
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <a id="jak" asp-action="Index" asp-controller="Map"> <p id="btn-modal">ДІЗНАТИСЬ БІЛЬШЕ</p></a>
+            }
         </div>
     </div>
     <div class="content-see">
-        <h2 id="title-content-see">Які є міжнародні проекти?</h2>
+        <h2 id="title-content-see">Summary</h2>
         <div class="block1">
             <div class="text">
                 <p id="description">
-                    Проєкт Еразмус+КА1.
-                    Проекти Еразмус+ КА 1 передбачають академічну мобільність студентів, викладачів та адміністративних працівників.
-                    Метою модуля Жана Моне є проведення осінньої школи «Креативні індустрії: європейський досвід» (EUCREAT) для студентів, 
-                    викладачів, органів місцевого самоврядування, бізнесу та громадськості для формування знань про політику ЄС щодо розвитку і 
-                    становлення креативних індустрій.
+                    IFNUL has different exchange agreements with many higher education institutions in European and participate in several European exchange programmes such as Erasmus+ and Horizon 2020 funded by European Union.
 
+                    For further information please choose information on the top of the page.
                 </p>
             </div>
             <div class="photo">
-                <img id="ph-block-nature" src="images/erasmus.png" alt="erasmus">
-            </div>
-        </div>
-        <div class="block2">
-            <div class="photo">
-                <img id="ph-block-nature" src="images/Learnopolis.png" alt="learnpolis">
-            </div>
-            <div class="text">
-                <p id="description-left">
-                    LEARNOPOLIS – це спільний проект Львівського національного університету імені Івана Франка та Байротського університету
-                    в межах програми Німецької служби академічних обмінів «Будуймо цифрове майбутнє разом – німецько-українська співпраця у вищій
-                    освіті(2019–2021)» за фінансової підтримки Федерального міністерства освіти і науки Німеччини. 
-                    Загальна мета програми – цифрова трансформація та інтернаціоналізація системи вищої освіти в Україні та її активніша інтеграція в 
-                    європейські структури. Проект «Lernopolis» спрямований на активніше впровадження та ефективне використання цифрових технологій 
-                    та інструментів в навчальному процесі в Львівському національному університеті Івана Франка та Байройтському університеті 
-                    та обмін досвідом. 
-                </p>
-            </div>
-        </div>
-        <div class="block1">
-            <div class="text">
-                <p id="description">
-                    UTTERLY «Центри сертифікації викладачів: інноваційні підходи до досконалості викладання» UNIVERSITY TEACHERS’ 
-                    CERTIFICATION CENTRES: INNOVATIVE APPROACH TO PROMOTION TEACHING EXCELLENCE / UTTERLY
-                    Проєкт має на меті модернізувати системи вищої освіти в Україні, запроваджуючи університетські центри підвищення 
-                    кваліфікації для просування європейських освітніх інновацій шляхом професійної сертифікації викладачів університетів.
-
-                </p>
-            </div>
-            <div class="photo">
-                <img id="ph-block-nature" src="images/utterly.jpg" alt="utterly">
+                <img id="ph-block-nature" src="images/logo.jpg" alt="logo" style="height: 150px; width: 150px">
             </div>
         </div>
 
-        <h2 id="title-content-see">Українські студенти під час міжнародних програм: </h2>
+
+        <h2 id="title-content-see">Universities that take part in programs </h2>
         <div class="sliders">
             <div class="fotorama">
-                <img src="images/Студент1.jpg">
-                <img src="images/Студент2.jpg">
-                <img src="images/Студент3.jpg">
-                <img src="images/Студент4.jpg">
-                <img src="images/Студент5.jpg">
+                <img src="images/erasmus-experience-bucharest-romania.jpg">
+                <img src="images/erasmus-experience-kassel-germany.jpg">
+                <img src="images/experience-nicolaus-copernicus-university-poland.jpg">
             </div>
         </div>
 
@@ -75,29 +45,27 @@
         <div class="card-nature">
             <div class="card-wrap">
                 <div class="card">
-                    <img id="img-card" src="images/erasmus.png" alt="erasmus">
-                    <h2 id="title-content-see">Еразмус</h2>
+                    <img id="img-card" src="images/erasmus-experience-bucharest-romania.jpg" alt="photo nature">
+                    <h2 id="title-content-see">Bucharest University</h2>
                     <p id="title-content-see">
-                        Ви отримаєте неперевершені емоції,
-                        від навчання, познайомитися з новими людьми і прекрасно проведете час.
+                        Romania
                     </p>
                 </div>
             </div>
             <div class="card-wrap">
                 <div class="card">
-                    <img id="img-card" src="images/Learnopolis.png" alt="learnopolis">
-                    <h2 id="title-content-see">learnopolis</h2>
+                    <img id="img-card" src="images/erasmus-experience-kassel-germany.jpg" alt="photo nature">
+                    <h2 id="title-content-see">Kassel University</h2>
                     <p id="title-content-see">
-                        Протягом всього навчання Ви будете отримувати неперевершені знання та
-                        любуватися красою науки.
+                        Germany
                     </p>
                 </div>
             </div>
             <div class="card-wrap">
                 <div class="card">
-                    <img id="img-card" src="images/utterly.jpg" alt="utterly">
-                    <h2 id="title-content-see">Utterly</h2>
-                    <p id="title-content-see">Ви познайомитися з веселеми людьми, які люблять активно навчатися та обов'язково знайдете з ними спільну мову.</p>
+                    <img id="img-card" src="images/experience-nicolaus-copernicus-university-poland.jpg" alt="photo">
+                    <h2 id="title-content-see">Nicolaus Copernicus University</h2>
+                    <p id="title-content-see">Poland</p>
                 </div>
             </div>
         </div>
@@ -105,6 +73,6 @@
     <span id="contents"></span>
     @if (!User.Identity.IsAuthenticated)
     {
-        <a id="map-s" asp-action="Index" asp-controller="Map"><button id="btn-id-foot">ЗАПИСАТИСЯ НА СПЛАВ</button></a>
+        <a id="map-s" asp-action="Index" asp-controller="Map"><button id="btn-id-foot">ДІЗНАТИСЬ БІЛЬШЕ</button></a>
     }
 </div>
