@@ -31,7 +31,7 @@ namespace Excursion.Controllers
             Review newReview = new Review { ParticipantName = review.ParticipantName, ParticipantReview = review.ParticipantReview, ReviewTime = DateTime.Now };
             _context.Reviews.Add(newReview);
             await _context.SaveChangesAsync();
-            //await Authenticate(user); // аутентифікация
+            //await Authenticate(user); 
             return RedirectToAction("Index");
         }
     }

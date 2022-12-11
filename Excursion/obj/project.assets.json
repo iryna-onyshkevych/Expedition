@@ -8010,19 +8010,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\master\\.nuget\\packages\\": {}
+    "C:\\Users\\Yarema\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\master\\Desktop\\New folder (2)\\Expedition\\Excursion\\Excursion.csproj",
+      "projectUniqueName": "D:\\univer\\Project\\Expedition\\Excursion\\Excursion.csproj",
       "projectName": "Excursion",
-      "projectPath": "C:\\Users\\master\\Desktop\\New folder (2)\\Expedition\\Excursion\\Excursion.csproj",
-      "packagesPath": "C:\\Users\\master\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\master\\Desktop\\New folder (2)\\Expedition\\Excursion\\obj\\",
+      "projectPath": "D:\\univer\\Project\\Expedition\\Excursion\\Excursion.csproj",
+      "packagesPath": "C:\\Users\\Yarema\\.nuget\\packages\\",
+      "outputPath": "D:\\univer\\Project\\Expedition\\Excursion\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\master\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Yarema\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8034,6 +8034,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -8045,6 +8046,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "MailKit": {
             "target": "Package",
@@ -8089,7 +8091,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   },
